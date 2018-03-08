@@ -3,6 +3,11 @@ import random
 import colors
 
 DATA_DIR = "/home/kaifis/Code/Try/data"
+if not os.path.exists(DATA_DIR):
+    DATA_DIR = os.path.join(os.getcwd(), "data")
+    if not os.path.exists(DATA_DIR):
+        colors.print_danger("Cannot find your data file.")
+        exit(0)
 
 
 class Data:
