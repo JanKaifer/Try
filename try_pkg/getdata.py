@@ -1,13 +1,12 @@
 import os
 import random
-import colors
 
-DATA_DIR = "/home/kaifis/Code/Try/data"
+from try_pkg import colors
+
+DATA_DIR = os.path.join(os.getenv("HOME"), ".app.py")   # Here set your DATA path if you have your data stored somewhere else than in default location
 if not os.path.exists(DATA_DIR):
-    DATA_DIR = os.path.join(os.getcwd(), "data")
-    if not os.path.exists(DATA_DIR):
-        colors.print_danger("Cannot find your data file.")
-        exit(0)
+    os.makedirs(DATA_DIR)
+    print("Created new data directory: '%s'" % DATA_DIR)
 
 
 class Data:
@@ -88,11 +87,10 @@ class Data:
         for i in range(min(len(one), len(orig))):
             if one[i] != orig[i]:
                 return colors.get_success(out) + colors.get_red(one[i:])
-                break
             out += one[i]
         else:
             if len(one) < len(orig):
-                return colors.get_success(one) + colors.get_red("_"*(len(orig)-len(one)))
+                return colors.get_success(one) + colors.get_red("_" * (len(orig) - len(one)))
             elif len(one) > len(orig):
                 return colors.get_success(one[:len(orig)]) + colors.get_red(one[len(orig):])
             return colors.get_success(out)
