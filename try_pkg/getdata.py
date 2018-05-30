@@ -3,7 +3,7 @@ import random
 
 from try_pkg import colors
 
-DATA_DIR = os.path.join(os.getenv("HOME"), ".app.py")   # Here set your DATA path if you have your data stored somewhere else than in default location
+DATA_DIR = os.path.join(os.getenv("HOME"), ".try")   # Here set your DATA path if you have your data stored somewhere else than in default location
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
     print("Created new data directory: '%s'" % DATA_DIR)
