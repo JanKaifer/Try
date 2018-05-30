@@ -81,7 +81,7 @@ class Data:
         else:
             print(colors.get_wrong("Wrong. You entered '") + self.get_coloured(one, self.translate_two(word)) + colors.get_wrong("' instead of '%s'." % self.translate_two(word)))
             self.ask_two(word)
-    
+
     def get_coloured(self, one, orig):
         out = ""
         for i in range(min(len(one), len(orig))):
@@ -94,3 +94,6 @@ class Data:
             elif len(one) > len(orig):
                 return colors.get_success(one[:len(orig)]) + colors.get_red(one[len(orig):])
             return colors.get_success(out)
+
+    def flip(self):
+        self.data_one, self.data_two = self.data_two, self.data_one

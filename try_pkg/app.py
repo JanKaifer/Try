@@ -80,9 +80,9 @@ def main():
                         data.load()
                         try:
                             while True:
-                                print("Do you want to (r)emove words, (a)dd them, (s)ave or (e)xit?")
+                                print("Do you want to (r)emove words, (a)dd them, (s)ave, (f)lip languages or (e)xit?")
                                 action = input(">> ").split()[0]
-                                if action not in "arse":
+                                if action not in "arsfe":
                                     print_wrong("Invalid option.")
                                     continue
                                 elif action == "a":
@@ -103,6 +103,10 @@ def main():
                                 elif action == "s":
                                     data.save()
                                     print_success("Saved.")
+                                elif action == "f":
+                                    data.flip()
+                                    data.save()
+                                    print_success("Flipped and saved.")
                                 elif action == "e":
                                     data.save()
                                     break
