@@ -67,7 +67,7 @@ class Data:
         elif two == self.translate_one(word):
             colors.print_success("Correct.")
         else:
-            colors.print_wrong("Wrong. You entered '%s' instead of '%s'." % (two, self.translate_one(word)))
+            print("Wrong. You entered " + colors.get_wrong(str(two)) + " instead of " + colors.get_wrong(self.translate_one(word)) + ".")
             self.ask_one(word)
     
     def ask_two(self, word):
