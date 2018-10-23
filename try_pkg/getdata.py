@@ -79,7 +79,7 @@ class Data:
         elif one == self.translate_two(word):
             colors.print_success("Correct.")
         else:
-            print(colors.get_wrong("Wrong. You entered '") + self.get_coloured(one, self.translate_two(word)) + colors.get_wrong("' instead of '%s'." % self.translate_two(word)))
+            print("Wrong. You entered '" + self.get_coloured(one, self.translate_two(word)) + "' instead of " + colors.get_wrong("'%s'" % self.translate_two(word)) + ".")
             self.ask_two(word)
 
     def get_coloured(self, one, orig):
